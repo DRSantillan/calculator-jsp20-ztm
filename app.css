@@ -26,9 +26,18 @@ body {
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.operators {
+.operator {
+	background: rgb(104, 104, 104);
+	color: white;
+	font-size: 30px;
 }
-
+.clear {
+	background: rgb(255, 38, 38);
+	color: white;
+}
+.clear:hover {
+	filter: brightness(90%);
+}
 .calculator {
 	background: white;
 	width: 400px;
@@ -48,7 +57,7 @@ body {
 	margin: 0;
 	padding: 25px;
 	font-size: 2.5rem;
-	font-family: 'Lucida Console', san-serif;
+	
 	font-weight: 100;
 	overflow-x: auto;
 }
@@ -67,4 +76,47 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
+}
+
+/*  Buttons */
+
+.calculator-buttons {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 10px;
+	padding: 10px;
+}
+
+button {
+	min-height: 50px;
+	font-size: 20px;
+	font-weight: 100;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	background: rgba(199, 199, 199, 0.5);
+}
+button:hover {
+	filter: brightness(110%);
+}
+button:active {
+	transform: translateY(2px);
+}
+
+button:focus {
+	outline: none;
+}
+
+.equal-sign {
+	grid-column: -2;
+	grid-row: 2 / span 4;
+	background-color: rgb(0, 194, 0);
+	color: white;
+	font-size: 30px;
+}
+
+@media screen and (max-width: 600px) {
+	.calculator {
+		width: 95%;
+	}
 }
